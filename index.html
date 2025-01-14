@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="An introduction to Renewable Energy">
-    <title>Introduction to Renewable Energy</title>
+    <title>Stanik's OZE</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -15,30 +15,67 @@
             color: #333;
         }
         header {
-            background: linear-gradient(rgba(44, 111, 59, 0.7), rgba(44, 111, 59, 0.7)), url('file:///C:/Users/student/Desktop/solar-farm.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.7)), url('images/solar-farm.jpg') no-repeat center center/cover;
             color: #fff;
             padding: 20px 0;
             text-align: center;
             font-size: 2em;
         }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+        header h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
         }
         nav {
-            background-color: #4c914c;
-            text-align: center;
-            padding: 15px;
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            margin: 0 20px;
+            padding: 8px 8px 8px 32px;
             text-decoration: none;
-            color: #fff;
             font-size: 1.1em;
+            color: #fff;
+            display: block;
+            transition: 0.3s;
         }
         nav a:hover {
             color: #f4f4f9;
             text-decoration: underline;
+        }
+        nav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        #menuBtn {
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #menuBtn img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+        }
+        #menuBtn.open img {
+            transform: rotate(360deg);
         }
         main {
             padding: 30px 15px;
@@ -84,17 +121,22 @@
 </head>
 <body>
     <header>
-        <h1>Introduction to Renewable Energy</h1>
-        <p>Learn about the sustainable energy sources shaping the future.</p>
+        <h1>STANIK'S OZE</h1>
+        <p>Niesamowite usługi w zakresie odnawialnych Źródeł Energii</p>
     </header>
 
-    <nav>
+    <span id="menuBtn" onclick="toggleNav()">
+        <img src="path/to/your/image.png" alt="Menu Icon">
+    </span>
+
+    <nav id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#about">About</a>
         <a href="#types">Types</a>
         <a href="#benefits">Benefits</a>
     </nav>
 
-    <main>
+    <main id="mainContent">
         <section id="about">
             <h2>About Renewable Energy</h2>
             <p>Renewable energy refers to energy that is generated from natural resources which are replenished on a human timescale, such as sunlight, wind, rain, tides, waves, geothermal heat, and more. As global energy needs grow, renewable sources have become increasingly important in reducing environmental impact, ensuring sustainable energy supply, and addressing climate change.</p>
@@ -127,5 +169,26 @@
     <footer>
         <p>&copy; 2025 Renewable Energy Awareness</p>
     </footer>
+
+    <script>
+        function toggleNav() {
+            const menuBtn = document.getElementById("menuBtn");
+            if (menuBtn.classList.contains("open")) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("menuBtn").classList.add("open");
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("menuBtn").classList.remove("open");
+        }
+    </script>
 </body>
 </html>
