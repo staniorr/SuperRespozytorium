@@ -27,11 +27,11 @@
         }
         nav {
             height: 100%;
-            width: 0;
+            width: 250px; /* Ujawnij fragment menu nawigacyjnego */
             position: fixed;
             z-index: 1;
             top: 0;
-            left: 0;
+            left: -250px; /* Przesuń menu nawigacyjne poza ekran */
             background-color: #000;
             overflow-x: hidden;
             transition: 0.5s;
@@ -44,11 +44,12 @@
             font-size: 1.1em;
             color: #fff;
             display: block;
-            transition: 0.3s;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center; /* Wyśrodkuj tekst */
         }
         nav a:hover {
-            color: #f4f4f9;
-            text-decoration: underline;
+            background-color: #fff;
+            color: #000;
         }
         nav .closebtn {
             position: absolute;
@@ -56,6 +57,8 @@
             right: 25px;
             font-size: 36px;
             margin-left: 50px;
+            color: #fff;
+            cursor: pointer;
         }
         #menuBtn {
             cursor: pointer;
@@ -68,6 +71,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #fff; /* Dodaj biały kolor tła */
+            border-radius: 50%; /* Opcjonalnie, aby dodać zaokrąglone rogi */
         }
         #menuBtn img {
             width: 100%;
@@ -126,11 +131,11 @@
     </header>
 
     <span id="menuBtn" onclick="toggleNav()">
-        <img src="path/to/your/image.png" alt="Menu Icon">
+        <img src="images/letter_s_PNG26.png" alt="Menu Icon">
     </span>
 
     <nav id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Zamknij</a>
         <a href="#about">About</a>
         <a href="#types">Types</a>
         <a href="#benefits">Benefits</a>
@@ -173,6 +178,7 @@
     <script>
         function toggleNav() {
             const menuBtn = document.getElementById("menuBtn");
+            const sidenav = document.getElementById("mySidenav");
             if (menuBtn.classList.contains("open")) {
                 closeNav();
             } else {
@@ -181,12 +187,12 @@
         }
 
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.left = "0";
             document.getElementById("menuBtn").classList.add("open");
         }
 
         function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("mySidenav").style.left = "-250px";
             document.getElementById("menuBtn").classList.remove("open");
         }
     </script>
