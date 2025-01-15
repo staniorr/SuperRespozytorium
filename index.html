@@ -1,264 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An introduction to Renewable Energy">
-    <title>STANSEL</title>
-    <style>
-        @font-face {
-            font-family: 'Black Future';
-            src: url('path/to/BlackFuture.woff2') format('woff2'),
-                 url('path/to/BlackFuture.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        body {
-            font-family: 'Helvetica', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('images/lol1.jpg') no-repeat center center/cover;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 2em;
-        }
-        header h1 {
-            font-family: 'Black Future', sans-serif;
-        }
-        body::after {
-            content: "";
-            background: none;
-            position: absolute;
-            top: 100px; /* Adjust this value based on the height of your header */
-            left: 0;
-            width: 100%;
-            height: calc(100% - 100px); /* Adjust this value based on the height of your header */
-            z-index: -1;
-        }
-        nav {
-            height: 100%;
-            width: 250px; /* Ujawnij fragment menu nawigacyjnego */
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: -250px; /* Przesuń menu nawigacyjne poza ekran */
-            background-color: #000;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 1.1em;
-            color: #fff;
-            display: block;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: left; /* Wyrównaj tekst do lewej */
-        }
-        nav a:hover {
-        
-            color: #000;
-        }
-        nav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 0; /* Zrównaj z granicą menu nawigacyjnego */
-            font-size: 36px;
-            color: #fff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px; /* Zwiększ szerokość, aby podświetlenie było równe z granicą */
-            height: 50px; /* Zwiększ wysokość, aby podświetlenie było równe z granicą */
-            transition: color 0.3s; /* Dodaj przejście koloru */
-            background: none; /* Ustaw tło na przezroczyste */
-            border: none; /* Usuń obramowanie */
-        }
-        nav .closebtn:hover {
-            color: #800000; /* Zmiana koloru na bordowy po najechaniu kursorem */
-        }
-        #menuBtn {
-            cursor: pointer;
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #menuBtn img {
-            width: 40px; /* Powiększ szerokość */
-            height: 40px; /* Powiększ wysokość */
-            transition: transform 0.5s, filter 0.5s;
-            animation: spin 10s linear infinite; /* Dodaj animację obracania */
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        #menuBtn span {
-            font-size: 1em; /* Zwiększ lekko rozmiar napisu */
-            margin-left: 10px;
-            color: #fff;
-            transition: filter 0.5s;
-        }
-        #menuBtn:hover img,
-        #menuBtn:hover span {
-            filter: brightness(50%);
-        }
-        #menuBtn.open img {
-            transform: rotate(360deg);
-        }
-        main {
-            padding: 30px 15px;
-            max-width: 1000px;
-            margin: 30px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #2c6f3b;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-align: left; /* Wyrównaj tytuły sekcji do lewej */
-            margin-left: 50px; /* Wyrównaj do lewej krawędzi obrazka */
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c6f3b;
-            color: #fff;
-            font-size: 1em;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 8px 0;
-            font-size: 1.1em;
-        }
-        ul li::before {
-            content: "• ";
-            color: #2c6f3b;
-            font-size: 1.5em;
-            padding-right: 10px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strona Profesjonalna</title>
+  <!-- Link do fontu PP Neue Montreal -->
+  <link href="https://fonts.googleapis.com/css2?family=PP+Neue+Montreal:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Styl podstawowy -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica', sans-serif; /* Użyj czcionki Helvetica */
+      background: url('images/XD.jpg') no-repeat center center/cover; /* Ustaw obraz XD.jpg jako tło strony */
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth; /* Dodaj płynne przewijanie */
+      position: relative;
+    }
+
+    .kensol-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Ustaw szerokość obrazu */
+      height: auto; /* Zachowaj proporcje obrazu */
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 1cm; /* Przesuń pasek nawigacyjny 1cm niżej */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.5); /* Zwiększ przeźroczystość tła */
+      backdrop-filter: blur(10px); /* Dodaj efekt rozmycia */
+      display: flex;
+      justify-content: center; /* Wyśrodkuj napisy */
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 15px; /* Zaokrąglij brzegi */
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s, filter 0.3s; /* Dodaj przejście dla filtra */
+      text-transform: uppercase; /* Zmień na wielkie litery */
+      font-family: 'Bahnschrift', sans-serif; /* Użyj czcionki Bahnschrift */
+    }
+
+    .navbar .nav-links a:hover {
+      color: #007BFF;
+    }
+
+    .circle-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px; /* Zmniejsz przerwę między kołem a menu nawigacyjnym */
+      background: rgba(255, 255, 255, 0.5); /* Zwiększ przeźroczystość tła */
+      backdrop-filter: blur(10px); /* Dodaj efekt rozmycia */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: brightness(1.5); /* Rozjaśnij obraz do 50% */
+    }
+
+    .circle-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: rotate 20s linear infinite; /* Dodaj animację obracania */
+      filter: hue-rotate(180deg) saturate(0) brightness(0.5); /* Zamień kolor obrazu */
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>STANSEL</h1>
-        <p>NIESAMOWITE USŁUGI W ZAKRESIE ODNAWIALNYCH ŹRÓDEŁ ENERGII</p>
-    </header>
+  <!-- Obraz Kensol -->
+  <img src="images/Kensol.png" alt="Kensol Logo" class="kensol-logo">
 
-    <span id="menuBtn" onclick="toggleNav()">
-        <img src="images/STANSEL LOGO_BIALY.png" alt="Menu Icon">
-        <span>MENU</span>
-    </span>
-
-    <nav id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10005;</a>
-        <a href="../about.html">About</a>
-        <a href="../types.html">Types</a>
-        <a href="../benefits.html">Benefits</a>
-        <a href="../section1.html">Section 1</a>
-        <a href="../section2.html">Section 2</a>
-        <a href="contact.html">Kontakt</a> <!-- Zaktualizuj link do podstrony contact.html -->
+  <!-- Pasek nawigacyjny -->
+  <div class="navbar-container">
+    <div class="circle-logo">
+      <img src="images/STANSEL_LOGO2.png" alt="STANSEL Logo">
+    </div>
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="#">Strona Główna</a>
+        <a href="#o-nas">O Nas</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
     </nav>
+  </div>
 
-    <main id="mainContent">
-        <section id="about">
-            <h2>About Renewable Energy</h2>
-            <p>Renewable energy refers to energy that is generated from natural resources which are replenished on a human timescale, such as sunlight, wind, rain, tides, waves, geothermal heat, and more. As global energy needs grow, renewable sources have become increasingly important in reducing environmental impact, ensuring sustainable energy supply, and addressing climate change.</p>
-        </section>
+  <!-- Sekcja Hero -->
+  <div class="hero">
+    <h1>Witamy na naszej stronie</h1>
+  </div>
 
-        <section id="types">
-            <h2>Types of Renewable Energy</h2>
-            <ul>
-                <li><strong>Solar Energy</strong> – Energy harnessed from the sun's rays.</li>
-                <li><strong>Wind Energy</strong> – Energy captured from wind through turbines.</li>
-                <li><strong>Hydropower</strong> – Energy generated by the movement of water.</li>
-                <li><strong>Geothermal Energy</strong> – Energy derived from the heat within the Earth's crust.</li>
-                <li><strong>Biomass Energy</strong> – Energy produced from organic materials like wood, waste, and other plant matter.</li>
-            </ul>
-        </section>
+  <!-- Sekcja Treści -->
+  <div class="content">
+    <h2>O nas</h2>
+    <p>Jesteśmy firmą specjalizującą się w nowoczesnych rozwiązaniach technologicznych, dostarczając innowacyjne produkty dla naszych klientów.</p>
 
-        <section id="benefits">
-            <h2>Benefits of Renewable Energy</h2>
-            <p>Renewable energy offers numerous advantages, including:</p>
-            <ul>
-                <li><strong>Environmental Impact:</strong> It reduces greenhouse gas emissions, helping to combat climate change.</li>
-                <li><strong>Sustainability:</strong> As these resources are naturally replenished, they are not subject to depletion like fossil fuels.</li>
-                <li><strong>Job Creation:</strong> The renewable energy sector has seen rapid growth, offering new jobs and economic opportunities.</li>
-                <li><strong>Energy Independence:</strong> By utilizing local renewable resources, countries can reduce their reliance on imported fossil fuels.</li>
-                <li><strong>Reduced Air Pollution:</strong> Cleaner energy production results in less air pollution and health issues related to it.</li>
-            </ul>
-        </section>
+    <h2>Usługi</h2>
+    <p>Nasze usługi obejmują projektowanie stron internetowych, rozwój aplikacji mobilnych oraz doradztwo IT. Skontaktuj się z nami, aby dowiedzieć się więcej!</p>
+  </div>
 
-        <section id="section1">
-            <h2>Section 1</h2>
-            <p>Content for section 1.</p>
-        </section>
+  <!-- Stopka -->
+  <footer>
+    &copy; 2025 STANSEL. Wszelkie prawa zastrzeżone.
+  </footer>
 
-        <section id="section2">
-            <h2>Section 2</h2>
-            <p>Content for section 2.</p>
-        </section>
+  <!-- Importowanie GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <!-- Skrypt animacji -->
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-        <section id="section3">
-            <h2>KONTAKT</h2>
-            <p>Skontaktuj się z nami pod adresem lukaszstanik19@gmail.com lub zadzwoń pod numer 517 788 802
-            </p>
-        </section>
-    </main>
+    gsap.from('.navbar', { duration: 1, opacity: 0, y: -50 });
+    gsap.from('.circle-logo', { duration: 1, opacity: 0, y: -50 }); /* Dodaj efekt do koła */
+    gsap.from('.hero h1', { duration: 1.5, opacity: 0, y: 50 });
+    gsap.from('.content h2, .content p', {
+      duration: 1.5,
+      opacity: 0,
+      y: 50,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: '.content',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: true
+      }
+    });
 
-    <footer>
-        <p>&copy; 2025 Renewable Energy Awareness</p>
-    </footer>
+    // Dodaj efekt hamowania przy scrollowaniu
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      document.body.style.scrollBehavior = 'smooth';
+      setTimeout(() => {
+        document.body.style.scrollBehavior = 'auto';
+      }, 500);
+    });
 
-    <script>
-        function toggleNav() {
-            const menuBtn = document.getElementById("menuBtn");
-            const sidenav = document.getElementById("mySidenav");
-            if (menuBtn.classList.contains("open")) {
-                closeNav();
-            } else {
-                openNav();
-            }
-        }
-
-        function openNav() {
-            document.getElementById("mySidenav").style.left = "0";
-            document.getElementById("menuBtn").classList.add("open");
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.left = "-250px";
-            document.getElementById("menuBtn").classList.remove("open");
-        }
-
-        // Usuń funkcję changeBackgroundColor
-    </script>
+    // Dodaj efekt rozmazania dla pozostałych napisów w menu nawigacyjnym
+    const navLinks = document.querySelectorAll('.navbar .nav-links a');
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        navLinks.forEach(otherLink => {
+          if (otherLink !== link) {
+            otherLink.style.filter = 'blur(1px)'; // Rozmazanie o 10%
+          }
+        });
+      });
+      link.addEventListener('mouseleave', () => {
+        navLinks.forEach(otherLink => {
+          otherLink.style.filter = 'none'; // Usuń rozmazanie
+        });
+      });
+    });
+  </script>
 </body>
 </html>
