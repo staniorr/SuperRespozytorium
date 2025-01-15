@@ -61,10 +61,10 @@
             color: #fff;
             display: block;
             transition: background-color 0.3s, color 0.3s;
-            text-align: center; /* Wyśrodkuj tekst */
+            text-align: left; /* Wyrównaj tekst do lewej */
         }
         nav a:hover {
-            background-color: #fff;
+        
             color: #000;
         }
         nav .closebtn {
@@ -79,12 +79,12 @@
             justify-content: center;
             width: 50px; /* Zwiększ szerokość, aby podświetlenie było równe z granicą */
             height: 50px; /* Zwiększ wysokość, aby podświetlenie było równe z granicą */
+            transition: color 0.3s; /* Dodaj przejście koloru */
+            background: none; /* Ustaw tło na przezroczyste */
+            border: none; /* Usuń obramowanie */
         }
         nav .closebtn:hover {
-            background-color: #fff;
-            color: #000;
-            width: px; /* Upewnij się, że podświetlenie jest kwadratowe */
-            height: 50px; /* Upewnij się, że podświetlenie jest kwadratowe */
+            color: #800000; /* Zmiana koloru na bordowy po najechaniu kursorem */
         }
         #menuBtn {
             cursor: pointer;
@@ -92,17 +92,29 @@
             top: 15px;
             left: 15px;
             z-index: 2;
-            width: 40px; /* Powiększ szerokość */
-            height: 40px; /* Powiększ wysokość */
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%; /* Opcjonalnie, aby dodać zaokrąglone rogi */
         }
         #menuBtn img {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s;
+            width: 40px; /* Powiększ szerokość */
+            height: 40px; /* Powiększ wysokość */
+            transition: transform 0.5s, filter 0.5s;
+            animation: spin 10s linear infinite; /* Dodaj animację obracania */
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #menuBtn span {
+            font-size: 1em; /* Zwiększ lekko rozmiar napisu */
+            margin-left: 10px;
+            color: #fff;
+            transition: filter 0.5s;
+        }
+        #menuBtn:hover img,
+        #menuBtn:hover span {
+            filter: brightness(50%);
         }
         #menuBtn.open img {
             transform: rotate(360deg);
@@ -119,6 +131,8 @@
             color: #2c6f3b;
             font-size: 1.8em;
             margin-bottom: 20px;
+            text-align: left; /* Wyrównaj tytuły sekcji do lewej */
+            margin-left: 50px; /* Wyrównaj do lewej krawędzi obrazka */
         }
         section {
             margin-bottom: 30px;
@@ -160,16 +174,17 @@
 
     <span id="menuBtn" onclick="toggleNav()">
         <img src="images/STANSEL LOGO_BIALY.png" alt="Menu Icon">
+        <span>MENU</span>
     </span>
 
     <nav id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10005;</a>
-        <a href="#about">About</a>
-        <a href="#types">Types</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#section1">1</a>
-        <a href="#section2">2</a>
-        <a href="#section3">Kontakt</a>
+        <a href="../about.html">About</a>
+        <a href="../types.html">Types</a>
+        <a href="../benefits.html">Benefits</a>
+        <a href="../section1.html">Section 1</a>
+        <a href="../section2.html">Section 2</a>
+        <a href="contact.html">Kontakt</a> <!-- Zaktualizuj link do podstrony contact.html -->
     </nav>
 
     <main id="mainContent">
